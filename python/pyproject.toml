@@ -1,0 +1,10 @@
+[project]
+name = "gilded-rose"
+version = "0.0.1"
+description = "GildedRose Refactoring Kata"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[dependency-groups]
+test = ["pytest==8.3.5"]
