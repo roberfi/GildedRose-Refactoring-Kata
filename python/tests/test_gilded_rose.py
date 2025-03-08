@@ -8,13 +8,15 @@ class TestGildedRose:
     @staticmethod
     def assert_item_sell_in_value(item: Item, *, expected_value: int) -> None:
         assert item.sell_in == expected_value, (
-            f"sell_in value of item {item.name} is wrong. Expected value: {expected_value}, actual value: {item.sell_in}"
+            f"sell_in value of item {item.name} is wrong. "
+            f"Expected value: {expected_value}, actual value: {item.sell_in}"
         )
 
     @staticmethod
     def assert_item_quality_value(item: Item, *, expected_value: int) -> None:
         assert item.quality == expected_value, (
-            f"quality value of item {item.name} is wrong. Expected value: {expected_value}, actual value: {item.quality}"
+            f"quality value of item {item.name} is wrong. "
+            f"Expected value: {expected_value}, actual value: {item.quality}"
         )
 
     @pytest.mark.parametrize(
