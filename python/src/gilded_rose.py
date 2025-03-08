@@ -1,3 +1,5 @@
+from typing import List
+
 from src.item import Item
 
 ITEM_NAME_AGED_BRIE = "Aged Brie"
@@ -9,7 +11,7 @@ MAX_QUALITY = 50
 
 
 class GildedRose(object):
-    def __init__(self, items: list[Item]) -> None:
+    def __init__(self, items: List[Item]) -> None:
         self.items = items
 
     @staticmethod
