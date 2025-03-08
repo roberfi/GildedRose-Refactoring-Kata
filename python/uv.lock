@@ -33,10 +33,8 @@ source = { virtual = "." }
 dev = [
     { name = "mypy", version = "1.14.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "mypy", version = "1.15.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
-    { name = "ruff" },
-]
-test = [
     { name = "pytest" },
+    { name = "ruff" },
 ]
 
 [package.metadata]
@@ -44,9 +42,9 @@ test = [
 [package.metadata.requires-dev]
 dev = [
     { name = "mypy", specifier = ">=1.14.1" },
+    { name = "pytest", specifier = "==8.3.5" },
     { name = "ruff", specifier = ">=0.9.10" },
 ]
-test = [{ name = "pytest", specifier = "==8.3.5" }]
 
 [[package]]
 name = "iniconfig"
