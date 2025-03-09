@@ -73,9 +73,9 @@ class TestGildedRose:
             pytest.param(
                 "Sulfuras, Hand of Ragnaros",
                 1,
-                90,
+                80,
                 1,
-                90,
+                80,
                 id="sulfuras_not_changed",
             ),
             pytest.param(
@@ -109,6 +109,22 @@ class TestGildedRose:
                 -1,
                 0,
                 id="quality_to_zero_after_sell_in_for_passes",
+            ),
+            pytest.param(
+                "Conjured",
+                10,
+                10,
+                9,
+                8,
+                id="quality_degraded_twice_faster_for_conjured",
+            ),
+            pytest.param(
+                "Conjured",
+                0,
+                10,
+                -1,
+                6,
+                id="quality_degraded_four_times_faster_for_conjured_after_sell_in",
             ),
         ),
     )

@@ -5,6 +5,7 @@ from src.item import Item
 ITEM_NAME_AGED_BRIE = "Aged Brie"
 ITEM_NAME_PASSES = "Backstage passes to a TAFKAL80ETC concert"
 ITEM_NAME_SULFURAS = "Sulfuras, Hand of Ragnaros"
+ITEM_NAME_CONJURED = "Conjured"
 
 PASSES_SELL_IN_THRESHOLD_1 = 10
 PASSES_SELL_IN_THRESHOLD_2 = 5
@@ -18,8 +19,13 @@ class GildedRose(object):
         self.items = items
 
     @staticmethod
-    def __get_item_updated_quality(sell_in: int, previous_quality: int, increase_quality: bool = False) -> int:
+    def __get_item_updated_quality(
+        sell_in: int, previous_quality: int, increase_quality: bool = False, double_quality_change: bool = False
+    ) -> int:
         factor = 2 if sell_in < 0 else 1
+
+        if double_quality_change:
+            factor *= 2
 
         if increase_quality:
             return previous_quality + factor
@@ -51,6 +57,7 @@ class GildedRose(object):
                     item.sell_in,
                     item.quality,
                     increase_quality=(item.name == ITEM_NAME_AGED_BRIE),
+                    double_quality_change=(item.name == ITEM_NAME_CONJURED),
                 )
 
             item.quality = max(min(item.quality, MAX_QUALITY), MIN_QUALITY)
